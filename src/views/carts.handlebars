@@ -1,0 +1,62 @@
+<div class="container">
+  <h1>🛒 Carrito #{{cartId}}</h1>
+
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{else}}
+    {{#if items.length}}
+      <div class="cart-table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each items}}
+            <tr>
+              <td class="product-name">{{this.title}}</td>
+              <td class="price">${{this.price}}</td>
+              <td class="quantity-cell">
+                <form method="post" action="/api/carts/{{../cartId}}/products/{{this._id}}?_method=PUT" class="quantity-form">
+                  <input type="number" min="1" name="quantity" value="{{this.quantity}}" class="quantity-input" />
+                  <button type="submit" class="update-btn">✏️</button>
+                </form>
+              </td>
+              <td class="subtotal">${{this.subtotal}}</td>
+              <td class="actions">
+                <form method="post" action="/api/carts/{{../cartId}}/products/{{this._id}}?_method=DELETE" class="delete-form">
+                  <button type="submit" class="delete-btn">🗑️</button>
+                </form>
+              </td>
+            </tr>
+            {{/each}}
+          </tbody>
+          <tfoot>
+            <tr class="total-row">
+              <td colspan="3" class="total-label">💰 Total</td>
+              <td colspan="2" class="total-amount">${{total}}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div class="cart-actions">
+        <form method="post" action="/api/carts/{{cartId}}?_method=DELETE" class="clear-cart-form">
+          <button type="submit" class="clear-cart-btn">🗑️ Vaciar carrito</button>
+        </form>
+        <a href="/products" class="continue-shopping">🛍️ Continuar comprando</a>
+      </div>
+    {{else}}
+      <div class="empty-cart">
+        <h2>🛒 Tu carrito está vacío</h2>
+        <p>¡Agrega algunos productos para comenzar tu compra!</p>
+        <a href="/products" class="continue-shopping">🛍️ Ver productos</a>
+      </div>
+    {{/if}}
+  {{/if}}
+</div>

@@ -1,17 +1,34 @@
 [
   {
-    "id": 1,
-    "title": "Pan",
-    "price": 1000
-  },
-  {
-    "id": 2,
-    "title": "Té",
-    "price": 1800
-  },
-  {
-    "id": 3,
-    "title": "Naranja",
-    "price": 3000
-  }
+  "title": "Café",
+  "description": "Café tostado molido 250g",
+  "price": 2500,
+  "category": "bebidas",
+  "stock": 50,
+  "status": true,
+  "thumbnails": [],
+  "code": "CAFE-250"
+},
+{
+  "title": "Té Verde",
+  "description": "Té verde orgánico 100g",
+  "price": 1800,
+  "category": "bebidas",
+  "stock": 30,
+  "status": true,
+  "thumbnails": [],
+  "code": "TEVERDE-100"
+},
+{
+  "title": "Galletas Integrales",
+  "description": "Galletas integrales sin azúcar 200g",
+  "price": 1200,
+  "category": "snacks",
+  "stock": 40,
+  "status": true,
+  "thumbnails": [],
+  "code": "GALLETAS-200"
+}
+
+
 ]

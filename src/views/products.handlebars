@@ -1,0 +1,45 @@
+<div class="container">
+  <h1>🛍️ Productos</h1>
+
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{/if}}
+
+  <div class="products-grid">
+    {{#each products}}
+      <div class="product-card">
+        <div class="product-info">
+          <h3>{{this.title}}</h3>
+          <p class="product-description">{{this.description}}</p>
+          <div class="product-details">
+            <span class="price">${{this.price}}</span>
+            <span class="category">{{this.category}}</span>
+            <span class="stock">Stock: {{this.stock}}</span>
+          </div>
+        </div>
+        <form method="post" action="/api/carts/{{../cartId}}/products/{{this._id}}" class="add-to-cart-form">
+          <input type="hidden" name="quantity" value="1" />
+          <button type="submit" class="add-to-cart-btn">
+            🛒 Agregar al carrito
+          </button>
+        </form>
+      </div>
+    {{/each}}
+  </div>
+
+  {{#if products.length}}
+    <nav>
+      {{#if hasPrevPage}}
+        <a href="{{prevLink}}">← Anterior</a>
+      {{else}}
+        <span>← Anterior</span>
+      {{/if}}
+      <span>Página {{page}} de {{totalPages}}</span>
+      {{#if hasNextPage}}
+        <a href="{{nextLink}}">Siguiente →</a>
+      {{else}}
+        <span>Siguiente →</span>
+      {{/if}}
+    </nav>
+  {{/if}}
+</div>

@@ -1,20 +1,3 @@
 # Ignorar node_modules
 node_modules/
-
-# Archivos de entorno o config local
 .env
-.DS_Store
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Archivos temporales del sistema
-Thumbs.db
-
-# Carpeta de build (si la tuvieses)
-dist/
-build/
-
-# Archivos de pruebas temporales
-src/testProductManager.mjs
