@@ -93,7 +93,7 @@ export async function apiUpdateCartItemQuantity(req, res, next) {
     return next(err);
   }
 }
-
+// vaciar carrito
 export async function apiEmptyCart(req, res, next) {
   try {
     const { cid } = req.params;

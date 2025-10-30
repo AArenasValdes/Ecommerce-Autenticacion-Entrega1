@@ -1,16 +1,16 @@
-# Entrega Final - 
-Sistema de productos y carritos con persistencia en MongoDB (Mongoose).
+# 🛒 Entrega Final — E-Commerce (Usuarios + Autenticación JWT)
 
-## 📄 Descripción del Proyecto Final
+Proyecto e-commerce base con sistema completo de **autenticación, autorización y CRUD de usuarios**, implementado con **Express, MongoDB, Passport, JWT y cookies seguras**.
 
-### Este proyecto implementa un sistema de productos y carritos con persistencia en MongoDB (Mongoose), cumpliendo todos los requerimientos de la rúbrica de la Entrega Final de Backend CoderHouse.
+---
 
-### 🎯 Objetivos alcanzados
+## 🚀 Requisitos
 
-Migración completa de persistencia a MongoDB mediante Mongoose.
+- Node.js 18+
+- MongoDB local (`mongodb://127.0.0.1:27017/ecommerce`) o Atlas
+- Variables de entorno en `.env` (crea desde `.env.example`):
 
-Definición de modelos Product y Cart con validaciones, índices y relaciones (populate).
-
-Implementación de endpoints REST profesionales para productos y carritos.
-
-Integración de vistas Handlebars para visualizar los productos y carritos con paginación y botones funcionales.
+```env
+MONGO_URL=mongodb://127.0.0.1:27017/ecommerce
+JWT_SECRET=super-secreto
+PORT=3000
